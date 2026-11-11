@@ -57,13 +57,20 @@ footer {
   margin-top: 40px;
   padding-top: 20px;
   border-top: 2px solid #ddd;
-  text-align: center;
-  font-size: 0.9rem;
+  text-align: center; /* Centra todo el texto */
   color: #666;
   font-style: italic;
-  line-height: 1.4;
 }
 
-footer p {
+footer .frase {
+  font-size: 0.95rem;
+  margin: 0 0 10px 0; /* Un pequeño espacio entre la frase y la cita */
+  line-height: 1.5;
+}
+
+footer .cita {
+  font-size: 0.85rem;
+  font-weight: bold; /* Hace que la cita resalte un poco */
   margin: 0;
+  color: #444; /* Un gris un poco más oscuro para la cita */
 }
