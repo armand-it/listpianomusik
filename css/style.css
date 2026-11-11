@@ -74,3 +74,52 @@ footer .cita {
   margin: 0;
   color: #444; /* Un gris un poco más oscuro para la cita */
 }
+
+/* Estilos para los comentarios desplegables (Acordeón) */
+.btn-comentarios {
+  display: inline-block;
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.btn-comentarios:hover {
+  background-color: #e0e0e0;
+}
+
+/* Ocultamos el checkbox real (el que hace la magia) */
+.toggle-comentarios {
+  display: none;
+}
+
+/* Por defecto, los comentarios están ocultos */
+.contenedor-comentarios {
+  display: none;
+  background-color: #fafafa;
+  border-left: 4px solid #ccc;
+  padding: 10px 15px;
+  margin-top: 10px;
+  font-size: 0.95rem;
+  border-radius: 0 5px 5px 0;
+}
+
+/* Cuando el checkbox está marcado, mostramos los comentarios */
+.toggle-comentarios:checked ~ .contenedor-comentarios {
+  display: block;
+}
+
+/* Cambiamos el texto del botón usando CSS */
+.toggle-comentarios:checked ~ .btn-comentarios::before {
+  content: "- Contraer comentarios";
+}
+
+.toggle-comentarios:not(:checked) ~ .btn-comentarios::before {
+  content: "+ Ver comentarios";
+}
