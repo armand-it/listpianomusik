@@ -125,5 +125,5 @@ footer .cita {
 }
 
 .toggle-comentarios:not(:checked) ~ .btn-comentarios::before {
-  content: "+ Ver comentarios";
+  content: "+ Ver comentarios seleccionados";
 }
