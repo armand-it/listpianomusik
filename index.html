@@ -18,13 +18,9 @@
         <p>Probablemente pensamos en este título como una afirmación, pero en realidad es una pregunta, una que trasciende la temporalidad de una persona: ¿Eres limpio en la sangre de Cristo el Cordero?.  </p>
                 
         <div class="video-responsive">
-            <iframe 
-                src="https://www.youtube-nocookie.com/embed/tttVG4Siarc?rel=0&modestbranding=1&controls=1&showinfo=0&iv_load_policy=3" 
-                frameborder="0" 
-                referrerpolicy="strict-origin-when-cross-origin"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-            </iframe>
+            <div class="video-fachada" data-id="tttVG4Siarc" data-titulo="Eres limpio en la sangre de Cristo">
+                <img src="img/portada-video.webp" alt="Haz clic para mirar el video">
+            </div>
         </div>
 
         <p>Himno clásico, contenido vigente</p>
@@ -57,13 +53,9 @@
         <p>Aquí va el texto introductorio de tu entrada.</p>
         
         <div class="video-responsive">
-            <iframe 
-                src="https://www.youtube-nocookie.com/embed/KI33ItOO_M4?rel=0&modestbranding=1&controls=1&showinfo=0&iv_load_policy=3" 
-                frameborder="0" 
-                referrerpolicy="strict-origin-when-cross-origin"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-            </iframe>
+            <div class="video-fachada" data-id="tttVG4Siarc" data-titulo="Eres limpio en la sangre de Cristo">
+                <img src="img/portada-video.webp" alt="Haz clic para mirar el video">
+            </div>
         </div>
 
         <p>Más texto debajo del video..</p>
@@ -87,6 +79,28 @@
     <p class="frase">"Cantad a Jehová cántico nuevo; cantad a Jehová, toda la tierra. Cantad a Jehová, bendecid su nombre; anunciad de día en día su salvación."</p>
     <p class="cita">Salmo 96:1-2</p>
 </footer>
+
+<script>
+document.querySelectorAll('.video-fachada').forEach(fachada => {
+    fachada.addEventListener('click', function() {
+        const idVideo = this.getAttribute('data-id');
+        const titulo = this.getAttribute('data-titulo');
+        
+        // Creamos el iframe real de YouTube (sin autoplay para evitar bloqueos de audio)
+        const iframe = document.createElement('iframe');
+        iframe.setAttribute('src', `https://www.youtube-nocookie.com/embed/${idVideo}?rel=0&modestbranding=1&controls=1&showinfo=0&iv_load_policy=3&playsinline=1`);
+        iframe.setAttribute('frameborder', '0');
+        iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+        iframe.setAttribute('allowfullscreen', 'true');
+        iframe.setAttribute('title', titulo);
+        
+        // Reemplazamos la imagen por el reproductor
+        this.innerHTML = '';
+        this.appendChild(iframe);
+    });
+});
+</script>
 
 </body>
 </html>
