@@ -94,9 +94,13 @@ footer .cita {
   background-color: #e0e0e0;
 }
 
-/* Ocultamos el checkbox real (el que hace la magia) */
+/* Ocultamos el checkbox real (el que hace la magia) listo para iOS */
 .toggle-comentarios {
-  display: none;
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
 }
 
 /* Por defecto, los comentarios están ocultos */
