@@ -159,7 +159,7 @@ footer .cita {
   pointer-events: none;
 }
 
-/* Por defecto, la letra está oculta */
+/* Por defecto, la letra está oculta. */
 .contenedor-letra {
   display: none;
   background-color: #fdfdfd;
