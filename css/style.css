@@ -127,3 +127,68 @@ footer .cita {
 .toggle-comentarios:not(:checked) ~ .btn-comentarios::before {
   content: "+ Ver comentarios seleccionados";
 }
+
+/* =========================================
+   Estilos para la Letra del Himno (Acordeón)
+   ========================================= */
+
+.btn-letra {
+  display: inline-block;
+  background-color: #e8f0fe; 
+  color: #1a73e8; 
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.btn-letra:hover {
+  background-color: #d2e3fc;
+}
+
+/* Ocultamos el checkbox real para iOS */
+.toggle-letra {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+/* Por defecto, la letra está oculta */
+.contenedor-letra {
+  display: none;
+  background-color: #fdfdfd;
+  border-left: 4px solid #1a73e8; 
+  padding: 15px;
+  margin-top: 10px;
+  font-size: 0.95rem;
+  line-height: 1.8; 
+  color: #444;
+  font-style: italic; 
+  border-radius: 0 5px 5px 0;
+}
+
+/* Cuando el checkbox está marcado, mostramos la letra */
+.toggle-letra:checked ~ .contenedor-letra {
+  display: block;
+}
+
+/* Cambiamos el texto del botón de la letra */
+.toggle-letra:checked ~ .btn-letra::before {
+  content: "- Ocultar letra";
+}
+
+.toggle-letra:not(:checked) ~ .btn-letra::before {
+  content: "+ Ver letra";
+}
+
+/* Forzar que cada botón esté en su propia línea */
+.btn-comentarios, .btn-letra {
+  display: block;
+  width: fit-content; /* Hace que el botón solo ocupe el ancho de su texto */
+}
