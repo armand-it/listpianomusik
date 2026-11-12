@@ -198,6 +198,11 @@ footer .cita {
   border-radius: 0 5px 5px 0;
 }
 
+.contenedor-letra p {
+  margin-top: 0;
+  margin-bottom: 0.8rem; /* Separa un poco las estrofas */
+}
+
 /* Cuando el checkbox está marcado, mostramos la letra */
 .toggle-letra:checked ~ .contenedor-letra {
   display: block;
