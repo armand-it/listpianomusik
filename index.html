@@ -13,62 +13,26 @@
     <h1>Música, canto y más...</h1>
 
 
-    <!-- Entrada del Blog: post mas reciente afina -->
-    <div id="video-2" class="entrada">
-        <h2>post mas reciente afina 😀</h2>
-        <p>eY1k-DPP2c up</p>
-        
-        <div class="video-responsive">
-            <div class="video-fachada" data-id="YYKAAxgqH8k" data-titulo="post mas reciente afina">
-                <img src="img/portada-video.webp" alt="Haz clic para mirar el video">
-            </div>
-        </div>
-
-        <p></p>
-
-        <!-- COMENTARIOS -->
-        <input type="checkbox" id="toggle-com-2" class="toggle-comentarios">
-        <label for="toggle-com-2" class="btn-comentarios"></label>
-        
-        <div class="contenedor-comentarios">
-            <p>eY1k-DPP2c down</p>
-            
-        </div>
-
-        <!-- LETRA -->
-        <input type="checkbox" id="toggle-letra-2" class="toggle-letra">
-        <label for="toggle-letra-2" class="btn-letra"></label>
-        
-        <div class="contenedor-letra">
-            <p>tit afina</p>
-            <p>qwert<br>asdf</p>
-            <p>CORO<br>zxc<br>vbn</p>
-            
-        </div>
-    </div>
-
-
-
-    <!-- Entrada del Blog: voca hqFbcw5QP4g -->
+    <!-- Entrada del Blog: notas -->
     <div id="video-1" class="entrada">
-        <h2>voca 😀hqFbcw5QP4g</h2>
-        <p>hqFbcw5QP4g 😀arriba</p>
+        <h2>notas</h2>
+        <p>sobre vid</p>
         
         <div class="video-responsive">
-            <div class="video-fachada" data-id="hqFbcw5QP4g" data-titulo="voca hqFbcw5QP4g">
+            <div class="video-fachada" data-id="-6ZClxfb5k0" data-titulo="notas">
                 <img src="img/portada-video.webp" alt="Haz clic para mirar el video">
             </div>
         </div>
 
-        <p>hqFbcw5QP4g abajo 😀</p>
+        <p>bajo vid </p>
 
         <!-- COMENTARIOS -->
         <input type="checkbox" id="toggle-com-1" class="toggle-comentarios">
         <label for="toggle-com-1" class="btn-comentarios"></label>
         
         <div class="contenedor-comentarios">
-            <p>@hqFbcw5QP4g😀1</p>
-            <p>@hqF😀bcw5QP4g2</p>
+            <p>@-6ZClxfb5k0 1^_^</p>
+            <p>@-6ZClxfb5k0222</p>
             
         </div>
 
@@ -77,11 +41,15 @@
         <label for="toggle-letra-1" class="btn-letra"></label>
         
         <div class="contenedor-letra">
-            <p>vova tit</p>
-            <p>qwerty<br>qwert</p>
-            <p>😀😀😀</p>
+            <p>notas lyr</p>
+            <p>qwertyu<br>asdfgh</p>
+            <p><b>CORO</b><br>cor1<br>cor2</p>
+            <p>fin1<br>fin2</p>
             
         </div>
+
+        <!-- BOTÓN DE COMPARTIR -->
+        <button class="btn-compartir">➦ Compartir</button>
     </div>
 
 
@@ -112,6 +80,28 @@ document.querySelectorAll('.video-fachada').forEach(fachada => {
         // Reemplazamos la imagen por el reproductor
         this.innerHTML = '';
         this.appendChild(iframe);
+    });
+});
+
+// Lógica para el botón de compartir
+document.querySelectorAll('.btn-compartir').forEach(boton => {
+    boton.addEventListener('click', function() {
+        // Busca la entrada del blog a la que pertenece este botón
+        const entrada = this.closest('.entrada');
+        const idVideo = entrada.id; 
+        const titulo = entrada.querySelector('h2').innerText;
+        
+        // Arma el enlace exacto
+        const url = `https://armand-it.github.io/listpianomusik/#${idVideo}`;
+        
+        // Arma el mensaje con saltos de línea reales
+        const mensaje = `🎵 Te comparto este canto: ${titulo}\n\nEscúchalo y lee la letra aquí: ${url}`;
+        
+        // Codifica el mensaje para que WhatsApp lo entienda perfectamente
+        const mensajeCodificado = encodeURIComponent(mensaje);
+        
+        // Abre WhatsApp
+        window.open(`https://api.whatsapp.com/send?text=${mensajeCodificado}`, '_blank');
     });
 });
 </script>

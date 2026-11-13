@@ -222,3 +222,23 @@ footer .cita {
   display: block;
   width: fit-content; /* Hace que el botón solo ocupe el ancho de su texto */
 }
+
+/* Estilos para el botón de Compartir */
+.btn-compartir {
+  display: inline-block;
+  background-color: #25D366; /* Color verde de WhatsApp */
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+  border: none;
+}
+
+.btn-compartir:hover {
+  background-color: #1ebe57;
+}
